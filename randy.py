@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import random, argparse
+import random, argparse, os
 
 parser = argparse.ArgumentParser(description='Script to randomize the lines in a file and then pick one randomly.')
 parser.add_argument('-i','--input', help='Input file name',required=True)
@@ -15,4 +15,10 @@ with open('randomfile','w') as target:
 with open('randomfile') as f:
     lines = random.sample(f.readlines(),1)
 
-print lines
+print "================================="
+print "\n"
+print "The randomly selected winner is: " 
+print(", ".join(lines)) 
+print "================================="
+
+os.remove('randomfile')
