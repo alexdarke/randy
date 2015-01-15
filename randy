@@ -1,0 +1,4 @@
+#!/bin/bash
+cat $1 | perl -MList::Util=shuffle -e 'print shuffle<STDIN>' > randomlist
+shuf -n 1 randomlist
+rm randomlist
